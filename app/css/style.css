@@ -1,6 +1,7 @@
 :root {
   --color-text: #000000;
-  --color-main: #EB682C; }
+  --color-main: #EB682C;
+  --color-second: #24397D; }
 
 /* Fonts */
 @font-face {
@@ -76,7 +77,7 @@ section {
       padding: 35px 0; } }
 
 .section-inner {
-  max-width: 1560px;
+  max-width: 1280px;
   padding: 0 20px;
   width: 100%;
   margin: auto;
@@ -130,6 +131,7 @@ section {
 .section-title {
   font-family: 'heebo-medium';
   font-size: 36px;
+  line-height: 1.1;
   color: var(--color-text); }
   .section-title.white {
     color: #fff; }
@@ -139,8 +141,8 @@ section {
     width: 90px;
     height: 3px;
     background-color: var(--color-main);
-    margin-top: 8px;
-    margin-bottom: 8px; }
+    margin-top: 10px;
+    margin-bottom: 10px; }
   .section-title.centered:after {
     margin-right: auto;
     margin-left: auto; }
@@ -160,6 +162,27 @@ section {
   max-width: 1054px;
   margin: auto;
   margin-top: 20px; }
+
+.decor-grid {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none; }
+  .decor-grid .inner {
+    width: 100%;
+    height: 100%;
+    max-width: 1240px;
+    display: flex;
+    margin: auto; }
+    .decor-grid .inner .col {
+      width: 33.33%;
+      border-right: 1px solid #000;
+      opacity: 0.1; }
+      .decor-grid .inner .col:last-child {
+        border-left: 1px solid #000; }
 
 .loading:after {
   display: inline-block;
@@ -483,6 +506,167 @@ section.slider-top {
       height: 550px; } }
 
 /* --------------------- /Section slider-top ---------------------- */
+/* ---------------------- Section services ---------------------- */
+section.services .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0;
+  margin: 0px;
+  margin-top: 65px; }
+  section.services .boxes .box {
+    width: 33.33%;
+    margin: 0;
+    padding: 0px;
+    border-right: 1px solid #fff; }
+
+/* --------------------- /Section services ---------------------- */
+.box-category .inner {
+  position: relative; }
+  .box-category .inner:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-second);
+    opacity: 0.4;
+    transition: opacity 0.5s; }
+
+.box-category .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  height: 728px;
+  overflow: hidden; }
+  .box-category .image img {
+    height: 100%; }
+
+.box-category .title-main {
+  font-family: 'heebo-regular';
+  font-size: 36px;
+  line-height: 1.1;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 3;
+  transition: 0.5s; }
+
+.box-category .hover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: 0.5s; }
+  .box-category .hover .title {
+    position: static;
+    font-family: 'heebo-regular';
+    font-size: 36px;
+    line-height: 1.1;
+    color: #fff; }
+    .box-category .hover .title:after {
+      content: "";
+      display: block;
+      width: 65px;
+      height: 3px;
+      background-color: var(--color-main);
+      margin: 5px auto; }
+  .box-category .hover .list {
+    margin-top: 25px; }
+    .box-category .hover .list .item {
+      font-family: 'heebo-light';
+      font-size: 18px;
+      color: #fff;
+      display: block;
+      margin-top: 5px;
+      transition: 0.5s; }
+      .box-category .hover .list .item:hover {
+        color: var(--color-main); }
+
+.box-category:hover .inner:after {
+  opacity: 0.88; }
+
+.box-category:hover .title-main {
+  opacity: 0;
+  visibility: hidden; }
+
+.box-category:hover .hover {
+  opacity: 1;
+  visibility: visible; }
+
+/* ---------------------- Section vision ---------------------- */
+section.vision .advantages {
+  margin-top: 65px; }
+  section.vision .advantages .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    margin-top: 35px;
+    border-bottom: 1px solid #707070; }
+    section.vision .advantages .boxes .box {
+      padding: 15px;
+      border-right: 1px solid #707070;
+      text-align: center;
+      flex: 1 0; }
+      section.vision .advantages .boxes .box:first-child {
+        border-right: none; }
+      section.vision .advantages .boxes .box .icon {
+        height: 50px; }
+        section.vision .advantages .boxes .box .icon img {
+          max-height: 100%;
+          margin: auto; }
+      section.vision .advantages .boxes .box .title {
+        font-family: 'heebo-medium';
+        font-size: 18px;
+        color: var(--color-text);
+        margin-top: 10px; }
+      section.vision .advantages .boxes .box .desc {
+        font-family: 'heebo-light';
+        font-size: 18px;
+        color: var(--color-text); }
+
+/* --------------------- /Section vision ---------------------- */
+.menu-horizontal .title-mobile {
+  display: none; }
+
+.menu-horizontal .items {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 65px; }
+  .menu-horizontal .items .item {
+    font-family: 'heebo-medium';
+    font-size: 21px;
+    color: var(--color-text);
+    margin: 0 20px;
+    position: relative;
+    transition: 0.5s; }
+    .menu-horizontal .items .item:hover, .menu-horizontal .items .item.active {
+      color: var(--color-main); }
+    .menu-horizontal .items .item:after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 3px;
+      background-color: var(--color-main);
+      margin: 5px auto; }
+
 .alignnone, .aligncenter, .alignright, .alignleft {
   max-width: 50%; }
 
