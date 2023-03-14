@@ -1,0 +1,330 @@
+/* ---------------------- header ---------------------- */
+header {
+	height: 90px;
+	
+	z-index: 9999;
+	background: #fff;
+	transition: 0.5s;
+	overflow: visible;
+    max-width: 1920px;
+    margin: auto;
+
+	&.home {
+		background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+		#sm_menu_ham {
+			filter: brightness(0) invert(1);
+		}
+	}
+
+	
+	.header-inner {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+        padding: 0 50px;
+	}
+
+	.menu-button {
+		position: relative;
+	}
+
+	.logo {
+		height: 100%;
+        @include flex-center;
+		img {
+			max-height: 86%;
+		}
+	}
+
+    .tel {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include f-b;
+        font-size: 21px;
+        color: #fff;
+
+        img {
+            margin-left: 8px;
+        }
+    }
+
+    .part-right, .tel {
+        flex: 1 0;
+    }
+
+    .part-right {
+        display: flex;
+        align-items: center;
+    }
+    .menu-cont {
+        height: 100%;
+        text-align: right;
+        margin: 0 35px;
+        display: inline-block;
+        position: relative;
+        ul.main-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            .menu-item-has-children, .has-extra-menu { 
+                padding-left: 20px;
+                background: url("../images/icons/rdw.svg") no-repeat left 10px center;
+            }
+            .menu-item-has-children {
+                position: relative;
+            }
+            .has-extra-menu { 
+                position: static;
+            }
+            > li {
+                position: relative;
+                padding: 0 15px;
+                > a {
+                    position: relative;
+                    transition: 0.25s;
+                    @include f-l;
+                    font-size: 21px;
+                    color: #fff;
+                    
+                    padding: 5px 5px;
+                    white-space: nowrap;
+                    display: inline-block;
+                    height: 100%;
+                    
+                    &:hover {
+                        color: var(--color-main);
+                    }
+                }
+                &.current_page_item, &.current-menu-item {
+                    > a {
+                        @include f-b;
+                    }
+                }
+                .sub-menu {
+                    padding: 20px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 100%;
+                    background-color: #fff;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: 0.15s;
+                    box-shadow: 0px 2px 15px 0px rgba(50, 50, 50, 0.2);
+                    z-index: 99;
+                    li {
+                        margin: 0;
+                        &.menu-item-has-children {
+                            background: url("../images/icons/rr.svg") no-repeat left center;
+                        }
+                        a {
+                            @include f-r;
+                            font-size: 17px;
+                            color: var(--color-text);
+                            padding: 8px;
+                            white-space: nowrap;
+                            display: inline-block;
+                            transition: 0.5s;
+                            &:hover {
+                                color: var(--color-main);
+                            }
+                        }
+                        .sub-menu {
+                            left: auto;
+                            right: 100%;
+                            top: 0;
+                            transform: translateX(-20px);
+                        }
+                        &:hover {
+                            >.sub-menu {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                            >.extra-menu {
+                                top: 100%;
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                            
+                        }
+                    }
+                }
+
+  
+
+                &:hover {
+                    >.sub-menu {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+	
+}
+/* --------------------- /header ---------------------- */
+
+/* ---------------------- Section slider-top ---------------------- */
+section.slider-top {
+    position: relative;
+    height: 815px;
+    padding-top: 0;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        .cover {
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            font-size: 0;
+            z-index: 2;
+            background: #24397d;
+            opacity: 0.4;
+        }
+    }
+
+    .image {
+        height: 100%;
+        @include flex-center;
+        img {
+            height: 100%;
+        }
+    }
+    .slider-top-main {
+        height: 100%;
+        .swiper-slide {
+            height: 100%;
+            @include flex-center;
+            img {
+                height: 100%;
+            }
+        }
+    }
+    
+    .text {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 0 50px;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .title {
+            @include f-l-b;
+            font-size: 185px;
+            color: #fff;
+            margin: 35px 0;
+        }
+    }
+
+    .part-bottom {
+        position: relative;
+        z-index: 2;
+        max-width: 1750px;
+        display: flex;
+        justify-content: space-between;
+        .info {
+            @include f-l;
+            font-size: 21px;
+            line-height: 1.5;
+            color: #fff;
+            max-width: 550px;
+            margin-right: 55px;
+        }
+    }
+
+    .widget-product {
+        padding: 20px;
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: #fff;
+        .image {
+            width: 185px;
+            flex-shrink: 0;
+            padding-left: 35px;
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .info {
+            padding: 0 35px;
+            border-right: 3px solid #E8672D;
+            .title {
+                @include f-m;
+                font-size: 26px;
+                color: #172A43;
+            }
+            .desc {
+                @include f-l;
+                font-size: 21px;
+                color: #172A43;
+            }
+        }
+
+        .arrow {
+            width: 50px;
+            flex-shrink: 0;
+            cursor: pointer;
+            @include flex-center;
+            position: relative;
+            height: 100%;
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                top: -20px;
+                bottom: -20px;
+                right: 0;
+                background-color: #d1d1d1;
+                width: 1px;
+                z-index: 3;
+            }
+        }
+    }
+
+ 
+    @media only screen and (max-width : $lw) {
+        height: 650px;
+
+    }
+
+    @media only screen and (max-width : $mw) {
+        height: 550px;
+  
+        .section-inner {
+    
+        }
+  
+    }
+
+
+}
+/* --------------------- /Section slider-top ---------------------- */
