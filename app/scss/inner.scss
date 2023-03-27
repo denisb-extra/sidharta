@@ -40,3 +40,40 @@ section.top-inner {
 	}
 }
 /* --------------------- /Section top-inner ---------------------- */
+
+.services-boxes {
+	position: relative;
+	z-index: 100;
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		
+		margin-top: 25px;
+		.box {
+			width: 25%;
+			padding: 20px;
+			background: #FBFBFB;
+			text-align: center;
+
+			.inner {
+				@include flex-center;
+				height: 100%;
+			}
+
+			@include f-l;
+			font-size: 18px;
+			color: var(--color-text);
+
+			border-left: 1px solid #0000007c;
+			border-bottom: 1px solid #0000007c;
+
+			&:nth-child(4n + 4) {
+				border-left: none;
+			}
+
+			&:nth-last-child(1), &:nth-last-child(2), &:nth-last-child(3), &:nth-last-child(4) {
+				border-bottom: none;
+			}
+		}
+	}
+}

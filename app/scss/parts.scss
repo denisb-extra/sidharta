@@ -153,7 +153,16 @@ section {
 	}
 }
 
+.title-regular {
+	@include f-m;
+	font-size: 18px;
+	color: var(--color-text);
 
+	margin-top: 35px;
+	&:first-child {
+		margin-top: 0;
+	}
+}
 .decor-grid {
 	position: absolute;
 	z-index: 99;
