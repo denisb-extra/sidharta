@@ -1,0 +1,42 @@
+/* ---------------------- Section top-inner ---------------------- */
+section.top-inner {
+	padding-top: 35px;
+    padding-bottom: 15px;							
+	color: #000;
+	text-align: center;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid #0814555b;
+	.section-inner {
+		z-index: 2;
+	}
+	.title {
+		@include f-m;
+		font-size: 35px;
+        
+		line-height: 1;
+		margin: 0;
+	}
+
+	.breadcrumbs {
+		@include f-r;
+		font-size: 17px;
+        margin-top: 10px;
+        text-align: right;
+	}
+
+
+
+
+    @media only screen and (max-width : $mw) {
+        padding-top: 25px;
+        .title {
+            font-size: 32px;
+        }
+        .breadcrumbs {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+	}
+}
+/* --------------------- /Section top-inner ---------------------- */

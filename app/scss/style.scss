@@ -99,6 +99,10 @@ body {
   	overflow-x: hidden;
   	@include f-r;
   	font-size: 18px;
+
+	@media only screen and (max-width : $mw) {
+		padding-top: 45px;
+	}
 }
 
 input {

@@ -23,6 +23,11 @@ $(document).ready(function ($) {
         }, 1000);
     });
 
+    $(".menu-horizontal .title-mobile").on("click", function(){
+        var cont = $(this).closest(".menu-horizontal");
+        $(".items", cont).slideToggle();
+    });
+
     document.addEventListener( 'wpcf7mailsent', function( event ) {
         var inputs = event.detail.inputs;
         thankyouPage = getFieldValueByName(inputs, "thankyou-page");
