@@ -238,6 +238,110 @@
 			</div>
         </div>
     </section>
+
+	<section class="team">
+		<div class="section-inner">
+			<p class="section-title centered">הצוות שלנו</p>
+			<div class="section-subtitle">
+                <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. קולהע צופעט 
+					איבן איף, ברומץ כלרשט מיחוצים. קלאצי הועניב היושבב שערש שמחויט - שלושע ותלברו 
+				</p>
+            </div>
+
+			<div class="boxes">
+				<div class="box box-team">
+					<div class="inner">
+						<div class="image">
+							<img src="images/inner/team/t1.png">
+						</div>
+						<div class="caption">
+							<p class="name">אחיה עפג'ין</p>
+							<p class="position">מנכ"ל ובעלים</p>
+						</div>
+						<div class="hover">
+							<p class="name">אחיה עפג'ין</p>
+							<p class="position">מנכ"ל ובעלים</p>
+							<div class="about">
+								<p>אתגרים הם האבנים בדרך המובילה אל המצוינות. התשוקה שלי היא ליצור, להתחדש ולהצליח במקומות שאחרים ויתרו. כשאני לא עסוק בניהול סידהארתא אני נהנה מהזמן עם משפחתי בקריאת ביוגרפיות ובטיפוח החצר. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box box-team">
+					<div class="inner">
+						<div class="image">
+							<img src="images/inner/team/t2.png">
+						</div>
+						<div class="caption">
+							<p class="name">אייל</p>
+							<p class="position">מנהל תפעול והתקנות</p>
+						</div>
+						<div class="hover">
+							<p class="name">אייל</p>
+							<p class="position">מנהל תפעול והתקנות</p>
+							<div class="about">
+								<p>אתגרים הם האבנים בדרך המובילה אל המצוינות. התשוקה שלי היא ליצור, להתחדש ולהצליח במקומות שאחרים ויתרו. כשאני לא עסוק בניהול סידהארתא אני נהנה מהזמן עם משפחתי בקריאת ביוגרפיות ובטיפוח החצר. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box box-team">
+					<div class="inner">
+						<div class="image">
+							<img src="images/inner/team/t3.png">
+						</div>
+						<div class="caption">
+							<p class="name">מרינה</p>
+							<p class="position">מנהלת רכש ובקרת איכות</p>
+						</div>
+						<div class="hover">
+							<p class="name">מרינה</p>
+							<p class="position">מנהלת רכש ובקרת איכות</p>
+							<div class="about">
+								<p>אתגרים הם האבנים בדרך המובילה אל המצוינות. התשוקה שלי היא ליצור, להתחדש ולהצליח במקומות שאחרים ויתרו. כשאני לא עסוק בניהול סידהארתא אני נהנה מהזמן עם משפחתי בקריאת ביוגרפיות ובטיפוח החצר. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box box-team">
+					<div class="inner">
+						<div class="image">
+							<img src="images/inner/team/t4.png">
+						</div>
+						<div class="caption">
+							<p class="name">בנג'ה</p>
+							<p class="position">מנהל פרויקטים</p>
+						</div>
+						<div class="hover">
+							<p class="name">בנג'ה</p>
+							<p class="position">מנהל פרויקטים</p>
+							<div class="about">
+								<p>אתגרים הם האבנים בדרך המובילה אל המצוינות. התשוקה שלי היא ליצור, להתחדש ולהצליח במקומות שאחרים ויתרו. כשאני לא עסוק בניהול סידהארתא אני נהנה מהזמן עם משפחתי בקריאת ביוגרפיות ובטיפוח החצר. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box box-team">
+					<div class="inner">
+						<div class="image">
+							<img src="images/inner/team/t5.png">
+						</div>
+						<div class="caption">
+							<p class="name">אורנית רמות</p>
+							<p class="position">מנהלת שיווק ומכירות</p>
+						</div>
+						<div class="hover">
+							<p class="name">אורנית רמות</p>
+							<p class="position">מנהלת שיווק ומכירות</p>
+							<div class="about">
+								<p>אתגרים הם האבנים בדרך המובילה אל המצוינות. התשוקה שלי היא ליצור, להתחדש ולהצליח במקומות שאחרים ויתרו. כשאני לא עסוק בניהול סידהארתא אני נהנה מהזמן עם משפחתי בקריאת ביוגרפיות ובטיפוח החצר. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
     
 	<footer>
 		<div class="part-top">
@@ -334,7 +438,10 @@
 
 	<script>
 		$(document).ready(function ($) {
-            
+			$(".box-team").on("click", function() {
+				let content = $(".hover", this).html();
+				$.fancybox.open('<div class="message fancybox-team">' + content + '</div>');
+			});
 		});
 	</script>
 </body>

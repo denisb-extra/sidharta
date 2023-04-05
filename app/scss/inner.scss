@@ -5,8 +5,10 @@ section.top-inner {
 	color: #000;
 	text-align: center;
     position: relative;
-    z-index: 10;
+    z-index: 99;
     border-bottom: 1px solid #0814555b;
+	background: #fff;
+
 	.section-inner {
 		z-index: 2;
 	}
@@ -57,7 +59,14 @@ section.top-inner {
 
 			.inner {
 				@include flex-center;
+				flex-direction: column;
 				height: 100%;
+				p {
+					margin-top: 10px;
+					&:first-child {
+						margin-top: 0;
+					}
+				}
 			}
 
 			@include f-l;
@@ -76,4 +85,683 @@ section.top-inner {
 			}
 		}
 	}
+
+	@media only screen and (max-width : $mw) {
+		.boxes {
+			display: flex;
+			flex-wrap: wrap;
+			
+			margin-top: 25px;
+			.box {
+				width: 50%;
+				padding: 20px 15px;
+
+				&:nth-child(4n + 4) {
+					border-left: 1px solid #0000007c;
+				}
+	
+				&:nth-last-child(1), &:nth-last-child(2), &:nth-last-child(3), &:nth-last-child(4) {
+					border-bottom: 1px solid #0000007c;
+				}
+
+				&:nth-child(2n + 2) {
+					border-left: none;
+				}
+	
+				&:nth-last-child(1), &:nth-last-child(2) {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+/* ---------------------- Section team ---------------------- */
+section.team {
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -10px;
+		margin-top: 35px;
+		.box {
+			width: 20%;
+			padding: 10px;
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.boxes {
+			.box {
+				width: 50%;
+				max-width: 250px;
+			}
+		}
+	}
+}
+/* --------------------- /Section team ---------------------- */
+
+.box-team {
+	.inner {
+		position: relative;
+	}
+	.image {
+		@include flex-center;
+		font-size: 0;
+		height: 325px;
+		overflow: hidden;
+		img {
+			height: 100%;
+		}
+
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: linear-gradient(rgba(36, 57, 125, 0) 0%, #24397d 100%);
+			opacity: 0.5;
+		}
+	}
+
+	.name {
+		@include f-r;
+		font-size: 18px;
+		color: #fff;
+	}
+
+	.position {
+		@include f-l;
+		font-size: 18px;
+		color: #fff;
+	}
+
+	.about {
+		@include f-l;
+		font-size: 14px;
+		color: #fff;
+		p {
+			margin-top: 5px;
+		}
+	}
+	
+	.caption {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		right: 0;
+		left: 0;
+		padding: 10px;
+		text-align: center;
+		transition: 0.5s;
+		opacity: 1;
+	}
+
+	
+
+	.hover {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		right: 0;
+		left: 0;
+		top: 0;
+		padding: 10px;
+		text-align: center;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background: #24397d80;
+		transition: 0.5s;
+		opacity: 0;
+	}
+
+	cursor: pointer;
+	@media only screen and (min-width : $mw) {
+		&:hover {
+			.caption {
+				opacity: 0;
+			}
+			.hover {
+				opacity: 1;
+			}
+		}
+	}
+	
+
+	@media only screen and (max-width : $mw) {
+		.image {
+			height: 235px;
+		}
+		.hover {
+			display: none;
+		}
+	}
+}
+
+.fancybox-team {
+	direction: rtl;
+	text-align: right;
+	padding: 40px 20px;
+	max-width: 1000px;
+	p{
+		@include f-r;
+		font-size: 18px;
+		color: #000;
+		margin-top: 25px;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	.name {
+		@include f-r;
+		font-size: 18px;
+		color: #000;
+	}
+
+	.position {
+		@include f-l;
+		font-size: 18px;
+		color: #000;
+	}
+
+	.about {
+		@include f-l;
+		font-size: 14px;
+		color: #000;
+		p {
+			margin-top: 5px;
+		}
+	}
+}
+
+
+/* ---------------------- Section service ---------------------- */
+section.service {
+	.parts {
+		margin-top: 55px;
+	}
+	.content.main {
+		margin-top: 35px;
+	}
+}
+/* --------------------- /Section service ---------------------- */
+
+.gallery-content {
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 20px -15px;
+		justify-content: center;
+		.box {
+			//flex: 1 0;
+			width: 25%;
+			padding: 15px;
+			flex-grow: 1;
+			.inner {
+				height: 215px;
+				@include flex-center;
+				overflow: hidden;
+				img {
+					height: 100%;
+					width: auto;
+					max-width: none;
+					transition: 0.5s;
+				}
+			}
+
+			cursor: pointer;
+			&:hover {
+				.inner {
+					img {
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.boxes {
+			margin: -10px;
+			margin-top: 20px;
+			.box {
+				padding: 10px;
+				width: 50%;
+				max-width: 200px;
+				.inner {
+					height: 140px;
+				}
+			}
+		}
+	}
+}
+
+/* ---------------------- Section types ---------------------- */
+section.types {
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -30px;
+		margin-top: 35px;
+		.box {
+			width: 33.33%;
+			padding: 30px;
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.boxes {
+			margin: -10px;
+			margin-top: 35px;
+			.box {
+				width: 50%;
+				max-width: 250px;
+				padding: 10px;
+			}
+		}
+	}
+}
+/* --------------------- /Section types ---------------------- */
+
+.box-service {
+	.inner {
+		position: relative;
+	}
+	&:hover {
+		.image {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+	.image {
+		@include flex-center;
+		font-size: 0;
+		height: 280px;
+		overflow: hidden;
+		img {
+			height: 100%;
+			transition: 0.5s;
+		}
+
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 70px;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: linear-gradient(rgba(0, 3, 78, 0) 0%, #24397d 100%);
+		}
+	}
+
+	.caption {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		right: 0;
+		left: 0;
+		padding: 15px;
+		text-align: center;
+		transition: 0.5s;
+		opacity: 1;
+	}
+	.title {
+		@include f-l;
+		font-size: 18px;
+		color: #fff;
+	}
+
+	@media only screen and (max-width : $mw) {
+		.image {
+			height: 190px;
+		}
+		.caption {
+			padding: 10px;
+		}
+		.title {
+			font-size: 17px;
+		}
+	}
+}
+
+
+/* ---------------------- Section blog ---------------------- */
+section.blog {
+	.section-title {
+		margin-bottom: 35px;
+	}
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -25px;
+		
+		.box {
+			width: 33.33%;
+			padding: 25px;
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.boxes {
+			justify-content: center;
+			margin: -10px;
+			.box {
+				width: 100%;
+				max-width: 400px;
+				padding: 10px;
+			}
+		}
+	}
+}
+/* --------------------- /Section blog ---------------------- */
+
+.box-post {
+	.inner {
+		position: relative;
+	}
+	.image {
+		@include flex-center;
+		font-size: 0;
+		height: 280px;
+		overflow: hidden;
+		img {
+			height: 100%;
+		}
+
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: linear-gradient(rgba(0, 3, 78, 0) 0%, #24397d 100%);
+		}
+	}
+
+	.title {
+		@include f-b;
+		font-size: 21px;
+		color: #fff;
+	}
+
+	.desc {
+		@include f-l;
+		font-size: 17px;
+		color: #fff;
+		p {
+			margin-top: 5px;
+		}
+	}
+	
+	.caption {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		right: 0;
+		left: 0;
+		padding: 15px;
+		text-align: center;
+		transition: 0.5s;
+		opacity: 1;
+	}
+
+	
+
+	.hover {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		right: 0;
+		left: 0;
+		top: 0;
+		padding: 15px;
+		text-align: center;
+
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex-direction: column;
+		background: #24397d80;
+		transition: 0.5s;
+		opacity: 0;
+	}
+
+	cursor: pointer;
+	@media only screen and (min-width : $mw) {
+		&:hover {
+			.caption {
+				opacity: 0;
+			}
+			.hover {
+				opacity: 1;
+			}
+		}
+	}
+
+
+	@media only screen and (max-width : $lw) {
+		.image {
+			height: 255px;
+		}
+	}
+	
+
+	@media only screen and (max-width : $mw) {
+		.image {
+			height: 235px;
+		}
+		.caption {
+			opacity: 0;
+		}
+		.hover {
+			opacity: 1;
+		}
+	}
+}
+
+
+
+/* ---------------------- Section post ---------------------- */
+section.post {
+
+	.img-main {
+		width: 50%;
+		float: left;
+		margin-right: 50px;
+		margin-bottom: 50px;
+		
+		&.mobile {
+			display: none;
+		}
+		img {
+			width: 100%;
+			margin-top: 0;
+		}
+	}
+
+	.content {
+		.section-title {
+			margin-top: 0;
+			p {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.title {
+		@include f-m;
+		font-size: 36px;
+		color: var(--color-text);
+	}
+
+	@media only screen and (max-width : $tw) {
+	
+	}
+
+	@media only screen and (max-width : $mw) { 
+
+		.img-main {
+			float: none;
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 0;
+			display: none;
+			&.mobile {
+				display: block;
+			}
+		}
+
+		.title {
+			font-size: 28px;
+			margin-bottom: 10px;
+		}
+	}
+}
+/* --------------------- /Section post ---------------------- */
+
+/* ---------------------- Section contacts ---------------------- */
+section.contact {
+	.sections {
+		display: flex;
+
+		.section-image {
+			@include flex-center;
+			font-size: 0;
+			overflow: hidden;
+			width: 33.33%;
+		}
+
+		.section-content {
+			width: 66.66%;
+			padding-right: 80px;
+		}
+	}
+
+	.wrapper-form {
+		background: #24397D;
+		margin-top: 50px;
+		padding: 35px 50px;
+	}
+
+	.wpcf7 {
+		min-width: 0;
+		form {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			
+		}
+
+		.wpcf7-form-control-wrap {
+			margin: 0;
+			padding: 10px;
+			width: 33.33%;
+
+			&[data-name*="message"] {
+				width: 100%;
+			}
+		}
+		.wrapper-submit {
+			width: auto;
+			float: none;
+			padding-left: 25px;
+		}
+	}
+
+	.parts {
+		margin-top: 75px;
+	}
+
+	@media only screen and (max-width : $mw) {
+		.sections {
+			display: block;
+			.section-image {
+				display: none;
+			}
+			.section-content {
+				width: 100%;
+				padding-right: 0;
+			}
+		}
+
+		.wrapper-form {
+			padding: 25px 20px;
+
+			.wpcf7 {
+				form {
+					display: block;
+				}
+				.wpcf7-form-control-wrap {
+					width: 100%;
+				}
+				.wrapper-submit {
+					width: auto;
+				}
+			}
+		}
+	}
+
+}
+/* --------------------- /Section contacts ---------------------- */
+
+.wrapper-social {
+    margin: auto;
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    display: inline-block;
+    margin-top: 35px;
+
+    .social {
+        display: flex;
+        align-items: center;
+        .social-title {
+            @include f-m;
+            font-size: 18px;
+            line-height: 2;
+            color: var(--color-text);
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+        a {
+            color: #FFFFFF;
+            font-size: 25px;
+            margin: 8px;
+            transition: 0.5s;
+            &:hover {
+                color: #F9C900;
+            }
+
+            
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        margin-top: 30px;
+        width: 100%;
+
+        &.desktop {
+            display: none;
+        }
+        &.mobile {
+            display: block;
+        }
+        .social {
+            .social-title { 
+                margin-top: 0 !important;
+            }
+        }
+    }
 }
